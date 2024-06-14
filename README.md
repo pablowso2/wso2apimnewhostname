@@ -1,6 +1,6 @@
 **WELCOME**
 
-The purpose of this project is a guide how you could change your localhost domain to any other you want.
+The purpose of this guide is to show you how can you change your localhost domain to any other you want.
 
 Asumptions:
 -APIM instance is already install in you localhost machine without any error. -In case you don´t have please check https://wso2.com/api-manager
