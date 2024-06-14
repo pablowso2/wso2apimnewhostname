@@ -24,6 +24,16 @@ keytool -import -alias **<ALIAS_KEY>** -file **<FILE_NAME_TO_STORE_BASE64>**.pem
 127.0.0.1	localhost dev.wso2.com
 
 6)Needs to change the deployment.toml file with this entries:
+[server]
+hostname = "**<ALIAS_KEY>**
+
+#Create a new keystore.tls part and turn off the existing one
+[keystore.tls]
+file_name =  "**<FILE_KEY_STORE_NAME>**jks"
+type =  "JKS"
+password =  "**<STORE_PASS>** "
+alias =  "**<ALIAS_KEY>**"
+key_password =  "**<KEY_STOREPASS>**"
 
 
 7)Start APIM
