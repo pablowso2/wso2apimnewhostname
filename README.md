@@ -35,9 +35,34 @@ password =  "**<STORE_PASS>** "
 alias =  "**<ALIAS_KEY>**"
 key_password =  "**<KEY_STOREPASS>**"
 
+[[apim.gateway.environment]]
+service_url = "https://**<ALIAS_KEY>**:${mgt.transport.https.port}/services/"
+username= "${admin.username}"
+password= "${admin.password}"
+ws_endpoint = "ws://**<ALIAS_KEY>**:9099"
+wss_endpoint = "wss://**<ALIAS_KEY>**:8099"
+http_endpoint = "http://**<ALIAS_KEY>**:${http.nio.port}"
+https_endpoint = "https://**<ALIAS_KEY>**:${https.nio.port}"
+websub_event_receiver_http_endpoint = "http://**<ALIAS_KEY>**:9021"
+websub_event_receiver_https_endpoint = "https://**<ALIAS_KEY>**:8021"
+
+
+[apim.key_manager]
+enable_apikey_subscription_validation = true
+service_url = "https://**<ALIAS_KEY>**:${mgt.transport.https.port}/services/"
+username = "$ref{super_admin.username}"
+password = "$ref{super_admin.password}"
+
+#[apim.devportal]
+url = "https://**<ALIAS_KEY>**:${mgt.transport.https.port}/devportal"
+
+[event_listener.properties]
+notification_endpoint = "https://**<ALIAS_KEY>**:${mgt.transport.https.port}/internal/data/v1/notify"
+
 
 7)Start APIM
-8)After APIM has already start, you must go to carbon and change this "callback url"
+
+8)After APIM has already started, you must go to carbon and change this "callback url"
 regexp=(https://**<ALIAS_KEY>**:9446/publisher/services/auth/callback/login|https://**<ALIAS_KEY>**:9446/publisher/services/auth/callback/logout)
 
 
