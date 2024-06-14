@@ -28,4 +28,9 @@ keytool -import -alias **<ALIAS_KEY>** -file **<FILE_NAME_TO_STORE_BASE64>**.pem
 
 7)Start APIM
 8)After APIM has already start, you must go to carbon and change this "callback url"
-regexp=(https://dev.wso2.com:9446/publisher/services/auth/callback/login|https://dev.wso2.com:9446/publisher/services/auth/callback/logout)
+regexp=(https://**<ALIAS_KEY>**:9446/publisher/services/auth/callback/login|https://**<ALIAS_KEY>**:9446/publisher/services/auth/callback/logout)
+
+
+
+
+
